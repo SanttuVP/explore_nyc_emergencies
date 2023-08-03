@@ -12,7 +12,7 @@ This project was created as an experiment using "prompt engineering" for creatin
 
 The data used in this application comes from two main sources:
 
-1. **311 Service Requests from 2010 to Present**: This dataset provides information about the service requests made to 311 in New York City from 2010 to the present. It can be downloaded from [NYC Open Data](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9).
+1. **311 Service Requests from 2010 to Present**: This dataset provides information about the service requests made to 311 in New York City from 2010 to the present. It is made available under the [NYC Open Data Policy and Terms of Use](https://opendata.cityofnewyork.us/overview/#termsofuse). It can be downloaded from [NYC Open Data](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9).
 
 2. **NYC Neighborhoods**: This dataset provides geographical information about the neighborhoods in New York City. It is licensed under the Open Data Commons Attribution License and can be downloaded from [Beta NYC](https://data.beta.nyc/dataset/pediacities-nyc-neighborhoods).
 
