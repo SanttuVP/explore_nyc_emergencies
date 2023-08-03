@@ -42,7 +42,7 @@ st.plotly_chart(fig)
 
 # Incidents by Borough
 incidents_by_borough = conn.query(f"SELECT \"Borough\", COUNT(*) FROM incidents WHERE \"Complaint Type\" = '{selected_complaint}' GROUP BY \"Borough\" ORDER BY count DESC LIMIT 10")
-fig = px.bar(incidents_by_borough, x='Borough', y='count', labels={'x':'Borough', 'count':'Number of incidents'}, title='Top 10 Boroughs by Number of Incidents', color='Borough', color_continuous_scale='Rainbow')
+fig = px.bar(incidents_by_borough, x='Borough', y='count', labels={'x':'Borough', 'count':'Number of incidents'}, title='Top Boroughs by Number of Incidents', color='Borough', color_continuous_scale='Rainbow')
 st.plotly_chart(fig)
 
 # Incidents by Neighborhood for the selected complaint type
