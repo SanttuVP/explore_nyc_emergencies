@@ -2,7 +2,11 @@ import streamlit as st
 import plotly.express as px
 
 # Sidebar
-st.sidebar.header('User Input Features')
+st.sidebar.header('Welcome!')
+st.sidebar.write("""
+Explore NYC 311 service requests.
+Choose a complaint type to start.
+""")
 
 # Load data
 @st.cache_data
@@ -16,7 +20,6 @@ selected_complaint = st.sidebar.selectbox('Complaint Type', complaint_types['Com
 
 conn = st.experimental_connection('mydb')
 
-
 # Main
 st.header(f'Data for {selected_complaint}')
 
@@ -24,7 +27,7 @@ st.header(f'Data for {selected_complaint}')
 st.subheader('Summary Statistics')
 num_incidents = conn.query(f"SELECT COUNT(*) FROM incidents WHERE \"Complaint Type\" = '{selected_complaint}'")
 st.write(f"Number of incidents: {num_incidents.values[0][0]}")
-date_range = conn.query(f"SELECT MIN(\"Created Date\"), MAX(\"Created Date\") FROM incidents WHERE \"Complaint Type\" = '{selected_complaint}'")
+date_range = conn.query(f"SELECT TO_CHAR(DATE(MIN(\"Created Date\")), 'Month DD, YYYY'), TO_CHAR(DATE(MAX(\"Created Date\")), 'Month DD, YYYY') FROM incidents WHERE \"Complaint Type\" = '{selected_complaint}'")
 st.write(f"Date range: {date_range.values[0][0]} to {date_range.values[0][1]}")
 
 # Summary Graphs
